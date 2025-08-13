@@ -225,4 +225,11 @@ Dari program sederhana ini, Anda bisa belajar:
 
 ---
 
+## 👨‍💻 Author
+
+**Julian**  
+📱 Instagram: [@gtwuuyyy_](https://instagram.com/gtwuuyyy_)
+
+---
+
 **Selamat belajar coding! 🚀**
