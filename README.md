@@ -38,7 +38,7 @@ Program ini akan melakukan semua itu untuk Anda!
 5. **Bayar** - Masukkan jumlah uang yang dibayarkan
 6. **Terima struk** - Program akan menampilkan struk dan kembalian
 
-## 📖 Penjelasan Kode (Untuk yang Ingin Belajar)
+## 📖 Penjelasan Kode
 
 ### 🏷️ **Baris 1-7: Membuat Daftar Barang dengan Dictionary**
 
@@ -206,14 +206,6 @@ Dari program sederhana ini, Anda bisa belajar:
 4. **Loop (for)** - Cara mengulang perintah
 5. **String Formatting** - Cara menampilkan data dengan rapi
 6. **Error Handling** - Cara menangani kesalahan input
-
-## 🔧 Cara Menjalankan Program
-
-1. Pastikan Python sudah terinstall di komputer
-2. Simpan kode dalam file `index.py`
-3. Buka terminal/command prompt
-4. Ketik: `python index.py`
-5. Ikuti instruksi yang muncul di layar
 
 ## 💡 Tips untuk Pengembangan
 
