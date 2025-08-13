@@ -40,130 +40,135 @@ Program ini akan melakukan semua itu untuk Anda!
 
 ## 📖 Penjelasan Kode (Untuk yang Ingin Belajar)
 
-### 🏷️ Bagian 1: Menyiapkan Data Barang (Baris 1-7)
+### 🏷️ **Baris 1-7: Membuat Daftar Barang dengan Dictionary**
 
 ```python
+# Baris 1: Membuat daftar dengan nama "item" - ini namanya dictionary
 item = {
-"pulpen": 5000,
-"pensil": 2500,
-"penggaris": 7000,
-"penghapus": 1500,
-"buku": 25000
+    "pulpen": 5000,      # Baris 2: pulpen harganya 5000
+    "pensil": 2500,      # Baris 3: pensil harganya 2500  
+    "penggaris": 7000,   # Baris 4: penggaris harganya 7000
+    "penghapus": 1500,   # Baris 5: penghapus harganya 1500
+    "buku": 25000        # Baris 6: buku harganya 25000
 }
+# Baris 7: Tutup kurung kurawal - selesai membuat dictionary
 ```
 
 **Penjelasan Sederhana:**
-- Ini seperti membuat **daftar harga** di kertas
-- `item` adalah nama daftar barang kita
-- Setiap barang punya nama dan harga
-- Contoh: "pulpen" harganya 5000 rupiah
+- **Baris 1**: Membuat daftar dengan nama `item` - ini namanya **dictionary**
+- **Dictionary** itu seperti kamus: ada kata (nama barang) dan artinya (harga)
+- **Baris 2-6**: Setiap baris mendaftarkan satu barang dan harganya
+- Format: `"nama_barang": harga` (nama barang dalam tanda petik, harga berupa angka)
+- **Baris 7**: Menutup dictionary dengan kurung kurawal `}`
 
-### 👋 Bagian 2: Menyapa Pembeli (Baris 9-13)
+### 👋 **Baris 9-13: Menyapa Pembeli dan Menampilkan Daftar**
 
 ```python
-print("Selamat datang di toko kami\n")
-print("Ini list barang yang kita jual:")
+print("Selamat datang di toko kami\n")    # Baris 9: Menyapa pembeli
+print("Ini list barang yang kita jual:")  # Baris 10: Memberitahu akan tampil daftar
 
-for nama_barang in item.keys():
-    print(f"• {nama_barang}")
+for nama_barang in item.keys():            # Baris 12: Ambil semua nama barang dari dictionary
+    print(f"• {nama_barang}")              # Baris 13: Tampilkan setiap nama barang dengan bullet
 ```
 
 **Penjelasan Sederhana:**
-- `print()` = perintah untuk menampilkan tulisan di layar
-- Program menyapa pembeli dengan ramah
-- `for` = perintah untuk mengulang sesuatu
-- Program menampilkan semua nama barang satu per satu dengan tanda bullet (•)
+- **Baris 9**: `print()` menampilkan tulisan "Selamat datang" di layar
+- **Baris 10**: Memberitahu bahwa akan menampilkan daftar barang
+- **Baris 12**: `for` artinya "untuk setiap", `item.keys()` mengambil semua nama barang dari dictionary
+- **Baris 13**: Menampilkan setiap nama barang dengan tanda bullet (•)
 
-### 📝 Bagian 3: Mengambil Data Pembeli (Baris 15-17)
+### 📝 **Baris 15-17: Mengambil Data dari Pembeli**
 
 ```python
-nama = input("\nMasukkan nama anda: ")
-barang = input("Masukkan barang yang ingin anda beli: ").lower()
+nama = input("\nMasukkan nama anda: ")                              # Baris 15: Minta nama pembeli
+barang = input("Masukkan barang yang ingin anda beli: ").lower()    # Baris 17: Minta nama barang
 ```
 
 **Penjelasan Sederhana:**
-- `input()` = perintah untuk meminta pengguna mengetik sesuatu
-- `nama` = tempat menyimpan nama pembeli
-- `barang` = tempat menyimpan nama barang yang ingin dibeli
-- `.lower()` = mengubah huruf besar jadi huruf kecil (agar tidak salah ketik)
+- **Baris 15**: `input()` meminta pengguna mengetik nama, hasilnya disimpan di `nama`
+- **Baris 17**: Meminta pengguna mengetik nama barang yang ingin dibeli
+- `.lower()` mengubah huruf besar jadi kecil (contoh: "PULPEN" jadi "pulpen")
+- Ini mencegah error kalau user salah ketik huruf besar/kecil
 
-### 🔍 Bagian 4: Mengecek Barang (Baris 19)
+### 🔍 **Baris 19: Mengecek Apakah Barang Ada**
 
 ```python
-if barang in item:
+if barang in item:    # Baris 19: Cek apakah barang yang diminta ada di dictionary
 ```
 
 **Penjelasan Sederhana:**
-- `if` = perintah "jika"
-- Program mengecek: "Jika barang yang diminta ada di toko..."
-- Seperti kasir yang mengecek apakah barang masih tersedia
+- **Baris 19**: `if` artinya "jika", `in` artinya "ada di dalam"
+- Program mengecek: "Jika barang yang diminta ada di dalam dictionary item..."
+- Seperti kasir yang mengecek apakah barang ada di toko
 
-### 💰 Bagian 5: Menampilkan Harga dan Meminta Pembayaran (Baris 20-23)
+### 💰 **Baris 20-23: Menampilkan Harga dan Meminta Pembayaran**
 
 ```python
-harga = item[barang]
-print(f"Harga {barang} adalah Rp. {harga:,}".replace(",", "."))
-dibayar = int(input("Masukkan jumlah uang dibayar: "))
+harga = item[barang]                                                    # Baris 20: Ambil harga dari dictionary
+print(f"Harga {barang} adalah Rp. {harga:,}".replace(",", "."))        # Baris 21: Tampilkan harga
+dibayar = int(input("Masukkan jumlah uang dibayar: "))                  # Baris 23: Minta jumlah pembayaran
 ```
 
 **Penjelasan Sederhana:**
-- `harga = item[barang]` = mengambil harga barang dari daftar
-- Program memberitahu harga barang
-- `:,` dan `.replace(",", ".")` = membuat format rupiah (5.000 bukan 5000)
-- `int()` = mengubah tulisan jadi angka
-- Program meminta pembeli memasukkan uang
+- **Baris 20**: `item[barang]` mengambil harga dari dictionary berdasarkan nama barang
+- **Baris 21**: Menampilkan harga dengan format rupiah (5.000 bukan 5000)
+- `:,` membuat koma, `.replace(",", ".")` mengubah koma jadi titik
+- **Baris 23**: `int()` mengubah tulisan jadi angka, `input()` meminta user mengetik jumlah uang
 
-### ✅ Bagian 6: Mengecek Uang Cukup atau Tidak (Baris 25)
+### ✅ **Baris 25: Mengecek Apakah Uang Cukup**
 
 ```python
-if dibayar >= harga:
+if dibayar >= harga:    # Baris 25: Cek apakah uang yang dibayar cukup atau tidak
 ```
 
 **Penjelasan Sederhana:**
-- `>=` = lebih besar atau sama dengan
-- Program mengecek: "Apakah uang yang dibayar cukup?"
-- Seperti kasir yang memastikan pembayaran cukup
+- **Baris 25**: `>=` artinya "lebih besar atau sama dengan"
+- Program mengecek: "Apakah uang yang dibayar >= harga barang?"
+- Kalau iya, lanjut ke proses berikutnya. Kalau tidak, tampilkan pesan error
 
-### 🧮 Bagian 7: Menghitung Kembalian (Baris 26)
+### 🧮 **Baris 26: Menghitung Kembalian**
 
 ```python
-kembalian = dibayar - harga
+kembalian = dibayar - harga    # Baris 26: Hitung kembalian
 ```
 
 **Penjelasan Sederhana:**
-- Kembalian = Uang yang dibayar - Harga barang
+- **Baris 26**: Rumus sederhana: Kembalian = Uang dibayar - Harga barang
 - Contoh: Bayar 10.000, harga 7.000, kembalian = 3.000
+- Hasil perhitungan disimpan di variabel `kembalian`
 
-### 🧾 Bagian 8: Mencetak Struk (Baris 28-34)
+### 🧾 **Baris 28-34: Mencetak Struk Pembelian**
 
 ```python
-print("\n===== STRUK PEMBELIAN =====")
-print(f"Nama      : {nama}")
-print(f"Beli      : {barang}")
-print(f"Tagihan   : Rp. {harga:,}".replace(",", "."))
-print(f"Dibayar   : Rp. {dibayar:,}".replace(",", "."))
-print(f"Kembalian : Rp. {kembalian:,}".replace(",", "."))
-print("===========================")
+print("\n===== STRUK PEMBELIAN =====")                              # Baris 28: Header struk
+print(f"Nama      : {nama}")                                        # Baris 29: Tampilkan nama
+print(f"Beli      : {barang}")                                      # Baris 30: Tampilkan barang
+print(f"Tagihan   : Rp. {harga:,}".replace(",", "."))              # Baris 31: Tampilkan harga
+print(f"Dibayar   : Rp. {dibayar:,}".replace(",", "."))            # Baris 32: Tampilkan pembayaran
+print(f"Kembalian : Rp. {kembalian:,}".replace(",", "."))          # Baris 33: Tampilkan kembalian
+print("===========================")                                # Baris 34: Footer struk
 ```
 
 **Penjelasan Sederhana:**
-- Program membuat struk pembelian yang rapi
-- Menampilkan semua informasi: nama, barang, harga, pembayaran, kembalian
-- Seperti struk yang Anda terima di toko sungguhan
+- **Baris 28**: Membuat header struk dengan garis pembatas
+- **Baris 29-33**: Menampilkan detail transaksi (nama, barang, harga, dll)
+- `f"..."` adalah format string, `{nama}` akan diganti dengan nilai variabel nama
+- **Baris 34**: Membuat footer struk dengan garis pembatas
 
-### ❌ Bagian 9: Menangani Kesalahan (Baris 36-40)
+### ❌ **Baris 35-39: Menangani Kesalahan**
 
 ```python
-else:
-    print("Uang tidak cukup untuk membeli barang ini.")
-else:
-    print("Barang tidak ditemukan.")
+else:                                                    # Baris 35: Kalau uang tidak cukup
+    print("Uang tidak cukup untuk membeli barang ini.") # Baris 36: Tampilkan pesan error
+else:                                                    # Baris 38: Kalau barang tidak ada
+    print("Barang tidak ditemukan.")                    # Baris 39: Tampilkan pesan error
 ```
 
 **Penjelasan Sederhana:**
-- `else` = "jika tidak" atau "selain itu"
-- Jika uang tidak cukup → tampilkan pesan "uang tidak cukup"
-- Jika barang tidak ada → tampilkan pesan "barang tidak ditemukan"
+- **Baris 35**: `else` artinya "kalau tidak" (kalau uang tidak cukup)
+- **Baris 36**: Tampilkan pesan bahwa uang tidak mencukupi
+- **Baris 38**: `else` kedua untuk kondisi barang tidak ditemukan
+- **Baris 39**: Tampilkan pesan bahwa barang tidak ada di toko
 
 ## 🎮 Contoh Penggunaan
 
